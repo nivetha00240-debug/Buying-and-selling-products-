@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopKart - Buy & Sell Products</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🛍️ ShopKart</h1>
+  <input type="text" id="search" placeholder="Search products... iPhone, Bike..." onkeyup="searchProduct()">
+  <button class="cart-btn" onclick="showCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+</header>
+
+<div class="filters">
+  <button onclick="filterProduct('all')">All</button>
+  <button onclick="filterProduct('mobile')">📱 Mobiles</button>
+  <button onclick="filterProduct('bike')">🏍️ Bikes</button>
+  <button onclick="filterProduct('fashion')">👗 Fashion</button>
+  <button onclick="filterProduct('home')">🏠 Home</button>
+</div>
+
+<!-- Sell Form -->
+<div class="sell-box">
+  <h3>Sell Your Product</h3>
+  <input type="text" id="pName" placeholder="Product Name">
+  <input type="number" id="pPrice" placeholder="Price ₹">
+  <input type="text" id="pImg" placeholder="Image URL (optional)">
+  <select id="pCat">
+    <option value="mobile">Mobile</option>
+    <option value="bike">Bike</option>
+    <option value="fashion">Fashion</option>
+    <option value="home">Home</option>
+  </select>
+  <input type="text" id="pSeller" placeholder="Your Name / Phone">
+  <button onclick="addProduct()">+ Post For Sale</button>
+</div>
+
+<div class="container" id="productList"></div>
+
+<!-- Cart Popup -->
+<div id="cartBox" class="cart-box">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <h3 id="total">Total: ₹0</h3>
+  <input type="text" id="buyerName" placeholder="Your Name">
+  <input type="text" id="buyerAddress" placeholder="Delivery Address">
+  <button class="buy-btn" onclick="placeOrder()">Buy Now</button>
+  <button class="close-btn" onclick="hideCart()">Close</button>
+  <p id="orderMsg"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
